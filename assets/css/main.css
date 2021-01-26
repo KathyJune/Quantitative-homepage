@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*
 *	############################################################################
-*	
+*
 *	Repute - Responsive Multipurpose Bootstrap Theme
 *	---------------------------------------------------------------------
 *
@@ -3736,7 +3736,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   }
 }
 /* ----------------------------------------------------- */
-/* HERO UNIT 
+/* HERO UNIT
 /* Types: slider with animated object, default slider
 /* ----------------------------------------------------- */
 .hero-unit-animated {
@@ -3909,7 +3909,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 /* ----------------------------------------------------- */
-/* BOOTSTRAP UI ELEMENTS 
+/* BOOTSTRAP UI ELEMENTS
 /* All styles that override bootstrap elements
 /* ----------------------------------------------------- */
 /* button */
@@ -4211,7 +4211,7 @@ div[class*="col-"] > .form-group {
 }
 
 /* ----------------------------------------------------- */
-/* UI ELEMENTS 
+/* UI ELEMENTS
 /* All styles related with custom UI elements, overrides
 /* plugin styles
 /* ----------------------------------------------------- */
@@ -5233,7 +5233,7 @@ ul.sidebar-nav ul.submenu li:first-child a {
   }
 }
 /* ----------------------------------------------------- */
-/* PORTFOLIO 
+/* PORTFOLIO
 /* Portfolio carousel, portfolio list, single portfolio
 /* ----------------------------------------------------- */
 /* general portfolio item with hovered caption */
@@ -5512,7 +5512,7 @@ ul.sidebar-nav ul.submenu li:first-child a {
 }
 
 /* ----------------------------------------------------- */
-/* BLOG 
+/* BLOG
 /* Blog list, blog single item
 /* ----------------------------------------------------- */
 /* blog list */
@@ -5773,7 +5773,7 @@ ul.sidebar-nav ul.submenu li:first-child a {
 }
 
 /* --------------*/
-/* TYPOGRAPHY 
+/* TYPOGRAPHY
 /* -------------*/
 .text-body-color {
   color: #4a4a4a !important;
@@ -6245,7 +6245,7 @@ ul.nav-categories > li > a:hover {
 /*	Page: About Us
 /*------------------------------------------------*/
 .team-member {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 .team-member.media > .pull-left {
   margin-right: 30px;
