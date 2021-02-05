@@ -18,6 +18,7 @@
 		<link href="assets/css/ie.css" rel="stylesheet">
 	<![endif]-->
 
+	<!-- GOOGLE FONTS -->
 	<!-- FAVICONS -->
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/repute144x144.png">
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/repute114x114.png">
@@ -28,7 +29,7 @@
 
 <body>
 	<!-- WRAPPER -->
-	<div class="index-page wrapper">
+	<div class="index-page wrapper" id="index">
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default" role="navigation">
 			<div class="container">
@@ -88,14 +89,14 @@
 				<!-- MAIN NAVIGATION -->
 				<div id="main-nav" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active">
-							<a href="#" class="header-tabs" >首页</a>
+						<li :class="{active: isActive('index')}">
+							<a href="index.html" class="header-tabs">首页</a>
 						</li>
-						<li class="dropdown ">
-							<a href="page-about-us.html" class="header-tabs" >成员</a>
+						<li :class="{active: isActive('page-about-us')}">
+							<a href="page-about-us.html" class="header-tabs">成员</a>
 						</li>
-						<li class="dropdown ">
-							<a href="#" class="header-tabs" >论文</a>
+						<li :class="{active: isActive('papers')}">
+							<a href="papers1.html" class="header-tabs">论文</a>
 						</li>
 						<li class="dropdown ">
 							<a href="#" class="header-tabs" >项目</a>
@@ -567,6 +568,23 @@
 	<script src="assets/js/plugins/jquery-easypiechart/jquery.easypiechart.min.js"></script>
 	<script src="assets/js/plugins/autohidingnavbar/jquery.bootstrap-autohidingnavbar.min.js"></script>
 	<script src="assets/js/repute-scripts.js"></script>
+  <script type="text/javascript" src="assets/files/quantitative.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+      const href = window.location.href
+  	  const app = new Vue({
+        el: '#index',
+        data: {
+          articles: info.articles
+        },
+        methods: {
+          isActive (nav) {
+            return (href.indexOf(nav)!== -1)
+          }
+        }
+      })
+  </script>
+
 
 </body>
 </html>

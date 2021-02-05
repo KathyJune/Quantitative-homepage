@@ -31,7 +31,7 @@
 
 <body>
 	<!-- WRAPPER -->
-	<div class="wrapper" id="about-us">
+	<div class="wrapper" id="profile">
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default" role="navigation">
 			<div class="container">
@@ -116,19 +116,18 @@
 		</nav>
 		<!-- END NAVBAR -->
 
-
 		<!-- BREADCRUMBS -->
 		<div class="page-header">
 			<div class="container">
-				<h1 class="page-title pull-left">ABOUT US</h1>
+				<h1 class="page-title pull-left">{{profile.name}}</h1>
 				<ol class="breadcrumb">
 					<li>
-						<a href="#">Home</a>
+						<a href="#">首页</a>
 					</li>
 					<li>
-						<a href="#">Pages</a>
+						<a href="#">团队</a>
 					</li>
-					<li class="active">About Us</li>
+					<li class="active">{{profile.name}}</li>
 				</ol>
 			</div>
 		</div>
@@ -139,68 +138,27 @@
 			<div class="container">
 				<section class="team">
 					<div class="section-content">
-            <div class="col-md-5" v-for="(item,index) in teachers" :key="item.pinyin" :class="{ 'col-md-offset-2': offset(index) }" >
+            <div class="row">
               <div class="team-member media">
                 <div class="media-body">
-                  <div class="" style="display: flex; align-items: center;">
-                    <img :href=" 'profile.html?name=' + item.pinyin" style="width: 120px; height: 120px; margin: 10px;" :src=" 'assets/img/team/' + item.pinyin + '.jpg' " style="margin: 10px;" class="media-object pull-left" onerror="this.src='assets/img/team/christian.jpg';"/>
-                    <div style="flex: 1;">
-                      <a :href=" 'profile.html?name=' + item.pinyin" class="media-heading team-name" style="font-size: x-large">{{item.name}}</a>
-                      <strong>{{item.type}}</strong>
-                      <hr style="margin-bottom: 10px; width: 60%;">
-                      <!-- <hr class="pull-left"><br> -->
-                      <ul class="list-inline">
-                        <li>
-                          <a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                      </ul>
-                    </div>
+                  <div class="col-md-3">
+                    <img :src=" 'assets/img/team/' + profile.pinyin + '.jpg' " style="width: 100%;height: 100%; padding: 0 30px;" class="media-object pull-left" onerror="this.src='assets/img/team/christian.jpg';"/>
                   </div>
-                  <div class="clearfix"></div>
-                  <p style="min-height: 80px;">{{item.interest}}</p>
+                  <div style="flex: 1;">
+                    <h3 class="media-heading">{{profile.name}}</h3>
+                    <strong>{{profile.title}}</strong>
+                    <div>{{profile.other_title}}</div>
+                    <hr style="margin-bottom: 10px; width: 60%;">
+                    <!-- <hr class="pull-left"><br> -->
+                    <div><span>邮箱：</span>{{profile.email}}</div>
+                    <div>{{profile.intro}}</div>
+                    <div>发表论文</div>
+                    <div></div>
+                  </div>
                 </div>
               </div>
             </div>
 					</div>
-					<hr class="col-md-12" style="margin-bottom: 40px; margin-top: 0">
-					<div class="section-content">
-            <div class="col-md-4" v-for="item in students" :key="item.pinyin">
-              <div class="team-member media">
-                <div class="media-body">
-                  <div class="" style="display: flex; align-items: center;">
-                    <img style="width: 120px; height: 120px; margin: 10px;" :src=" 'assets/img/team/' + item.pinyin + '.jpg' " style="margin: 10px;" class="media-object pull-left" onerror="this.src='assets/img/team/christian.jpg';"/>
-                    <!-- img v-if="isHasImg(item.pinyin)" style="width: 120px; height: 120px; margin: 10px;" :src=" 'assets/img/team/' + item.pinyin + '.jpg' " style="margin: 10px;" class="media-object pull-left"/>
-                    <img v-else style="width: 120px; height: 120px; margin: 10px;" src=" assets/img/team/person1.jpg" style="margin: 10px;" class="media-object pull-left"/ -->
-                    <div style="flex: 1;">
-                      <h3 class="media-heading team-name">{{item.name}}</h3>
-                      <strong>{{item.type}}</strong>
-                      <hr style="margin-bottom: 10px; width: 60%;">
-                      <!-- <hr class="pull-left"><br> -->
-                      <ul class="list-inline">
-                        <li>
-                          <a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="clearfix"></div>
-                  <p style="min-height: 80px;">{{item.interest}}</p>
-                </div>
-              </div>
-            </div>
-          </div>
 				</section>
 				<!-- END TEAM -->
 			</div>
@@ -297,39 +255,56 @@
 		<!-- END FOOTER -->
 	</div>
 	<!-- END WRAPPER -->
-
 	<!-- JAVASCRIPTS -->
 	<script src="assets/js/jquery-2.1.1.min.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/js/plugins/fitvids/jquery.fitvids.js"></script>
 	<script src="assets/js/plugins/autohidingnavbar/jquery.bootstrap-autohidingnavbar.min.js"></script>
 	<script src="assets/js/repute-scripts.js"></script>
+	<script type="text/javascript" src="assets/js/xlsx.core.min.js"></script>
 	<script type="text/javascript" src="assets/files/quantitative.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script>
 	  const href = window.location.href
+	  const pinyin = window.location.href.split("?")[1].split("=")[1]
+	  let profile = false
+	  let flag = false
+	  for (let s of info.students) {
+	    if (s.pinyin === pinyin) {
+	      profile = s
+	      flag = true
+	      break
+	    }
+	  }
+	  if (!flag) {
+	    for (let t of info.teachers) {
+        if (escape(t.pinyin) === pinyin) {
+          profile = t
+          break
+        }
+      }
+	  }
 	  const app = new Vue({
-	    el: '#about-us',
-	    data: {
-        students: info.students,
-        teachers: info.teachers
-	    },
-	    methods: {
-	      isHasImg (pinyin) {
-	        for (let i = 0; i<info.students.length; i++){
-	          if (info.students[i].pinyin === pinyin) {
-	            return info.students[i].pic
-	          }
-	        }
-        },
+      el: '#profile',
+      data: {
+        profile: profile
+      },
+      methods: {
         isActive (nav) {
-	        return (href.indexOf(nav)!== -1)
+          return nav==='page-about-us'
+        },
+        isHasImg (pinyin) {
+          for (let i = 0; i<info.students.length; i++){
+            if (info.students[i].pinyin === pinyin) {
+              return info.students[i].pic
+            }
+          }
         },
         offset (index) {
-	        return index%2 === 1
+          return index%2 === 1
         }
-	    }
-	  })
+      }
+    })
   </script>
 
 </body>
